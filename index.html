@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try 123Vegas</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: radial-gradient(circle at top, #252525, #050505 65%);
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 520px;
+      padding: 36px 28px;
+      text-align: center;
+      background: rgba(15, 15, 15, 0.96);
+      border: 2px solid #d4af37;
+      border-radius: 20px;
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.25);
+    }
+
+    h1 {
+      margin: 0;
+      color: #d4af37;
+      font-size: 42px;
+    }
+
+    .subtitle {
+      margin: 10px 0 28px;
+      color: #dddddd;
+      font-size: 18px;
+    }
+
+    .login-box {
+      margin: 22px 0;
+      padding: 20px;
+      background: #1c1c1c;
+      border-radius: 12px;
+    }
+
+    .label {
+      margin-top: 12px;
+      color: #aaaaaa;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .credential {
+      margin: 5px 0 12px;
+      color: #ffffff;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      margin-top: 14px;
+      padding: 17px 20px;
+      border: none;
+      border-radius: 10px;
+      color: #050505;
+      background: #d4af37;
+      font-size: 19px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .text-button {
+      background: #31d158;
+    }
+
+    .instructions {
+      margin: 24px 0 8px;
+      color: #dddddd;
+      line-height: 1.5;
+    }
+
+    .footer {
+      margin-top: 28px;
+      color: #888888;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <h1>123Vegas</h1>
+    <div class="subtitle">Take a look around with guest access</div>
+
+    <div class="login-box">
+      <div class="label">Guest Username</div>
+      <div class="credential">PMJ24</div>
+
+      <div class="label">Guest Password</div>
+      <div class="credential">Sabres24</div>
+    </div>
+
+    <a class="button" href="https://123Vegas.net" target="_blank">
+      Visit 123Vegas
+    </a>
+
+    <p class="instructions">
+      Interested in joining? Tap below, add your name to the prepared message,
+      and press Send.
+    </p>
+
+    <button class="button text-button" onclick="sendText()">
+      Text to Join
+    </button>
+
+    <div class="footer">
+      For adults 21 and older. Please play responsibly.
+    </div>
+  </main>
+
+  <script>
+    function sendText() {
+      const number = "+17165760800";
+      const message =
+        "Hi Paul, my name is ________. I scanned the 123Vegas QR code and would like information about joining.";
+
+      const isApple =
+        /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+      const separator = isApple ? "&" : "?";
+
+      window.location.href =
+        "sms:" + number + separator + "body=" + encodeURIComponent(message);
+    }
+  </script>
+</body>
+</html>
