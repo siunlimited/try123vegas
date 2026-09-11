@@ -104,7 +104,7 @@
 <body>
   <main class="card">
     <h1><span style="color: silver;">123</span><span style="color: orange;">VEGAS</span>.NET</h1>
-    <div class="subtitle">Take a look around with guest access</div>
+    <div class="subtitle">Explore with guest access</div>
 
     <div class="login-box">
       <div class="label">Guest Username</div>
@@ -119,8 +119,8 @@
     </a>
 
     <p class="instructions">
-      Interested in joining? <br>
-      Tap below, add your name and referral to the message.
+      Interested in joining? <br><br>
+      Tap below and include your name and referral in the message.
     </p>
 
     <button class="button text-button" onclick="sendText()">
@@ -128,24 +128,25 @@
     </button>
 
     <div class="footer">
-      For adults 21 and older. Please play responsibly.
+      For adults 21 and older.
     </div>
   </main>
 
-  <script>
-    function sendText() {
-      const number = "+17165760800";
-      const message =
-        "Hi, I scanned the 123Vegas QR code and would like information about joining. My name is and I was referred by: ";
+<script>
+  function sendText() {
+    const number = "+17165760800";
 
-      const isApple =
-        /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const message =
+      "Hi, I scanned the 123Vegas QR code and would like information about joining.\n\n" +
+      "My name: \n" +
+      "Referred by: ";
 
-      const separator = isApple ? "&" : "?";
+    const isApple = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const separator = isApple ? "&" : "?";
 
-      window.location.href =
-        "sms:" + number + separator + "body=" + encodeURIComponent(message);
-    }
-  </script>
+    window.location.href =
+      "sms:" + number + separator + "body=" + encodeURIComponent(message);
+  }
+</script>
 </body>
 </html>
